@@ -113,6 +113,35 @@
             100% { text-shadow: 0 0 25px rgba(244, 114, 182, 0.9), 0 0 50px rgba(192, 132, 252, 0.7); }
         }
 
+        /* Floating Message Button (Always fits on screen) */
+        .floating-msg-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 80;
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.35), rgba(236, 72, 153, 0.35));
+            border: 1px solid rgba(244, 114, 182, 0.6);
+            color: #ffffff;
+            padding: 10px 18px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-family: 'Cinzel', serif;
+            font-size: 0.82rem;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 0 20px rgba(168, 85, 247, 0.4);
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .floating-msg-btn:hover {
+            background: linear-gradient(135deg, rgba(168, 85, 247, 0.6), rgba(236, 72, 153, 0.6));
+            border-color: #ffffff;
+            transform: translateY(-2px);
+            box-shadow: 0 0 25px rgba(244, 114, 182, 0.8);
+        }
+
         /* Interactive Star Points Container */
         .stars-container {
             position: absolute;
@@ -334,53 +363,6 @@
             visibility: visible;
         }
 
-        /* Creator Footer Section */
-        .creator-footer {
-            position: absolute;
-            bottom: 15px;
-            width: 100%;
-            text-align: center;
-            z-index: 15;
-            font-size: 0.85rem;
-            color: #cbd5e1;
-            pointer-events: auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .creator-footer a {
-            color: #f472b6;
-            text-decoration: none;
-            font-weight: 700;
-            letter-spacing: 1px;
-            border-bottom: 1px dotted #f472b6;
-            transition: color 0.3s;
-        }
-
-        .creator-footer a:hover {
-            color: #ffffff;
-        }
-
-        .msg-toggle-btn {
-            background: rgba(168, 85, 247, 0.2);
-            border: 1px solid rgba(244, 114, 182, 0.4);
-            color: #f3e8ff;
-            padding: 5px 14px;
-            border-radius: 15px;
-            cursor: pointer;
-            font-family: 'Cinzel', serif;
-            font-size: 0.78rem;
-            transition: all 0.3s;
-        }
-
-        .msg-toggle-btn:hover {
-            background: rgba(168, 85, 247, 0.4);
-            border-color: #fff;
-            transform: translateY(-1px);
-        }
-
         /* Message Box styling inside card */
         .message-input {
             width: 100%;
@@ -412,8 +394,11 @@
             .memory-card p {
                 font-size: 0.92rem;
             }
-            .creator-footer {
-                font-size: 0.75rem;
+            .floating-msg-btn {
+                bottom: 15px;
+                right: 15px;
+                padding: 8px 14px;
+                font-size: 0.76rem;
             }
         }
     </style>
@@ -436,11 +421,8 @@
             <p>"একটি অদেখা মায়া, একটি না পাওয়া গল্প..."</p>
         </div>
 
-        <!-- Creator Footer & Message Trigger -->
-        <div class="creator-footer">
-            
-            <button class="msg-toggle-btn" onclick="openMessageModal()">💌 Leave a Message for Sunny</button>
-        </div>
+        <!-- Floating Message Button -->
+        <button class="floating-msg-btn" onclick="openMessageModal()">💌 Leave a Message</button>
 
         <!-- 22 Interactive Star Constellation Points -->
         <div class="stars-container">
@@ -858,7 +840,7 @@
                 const starPoint = event.currentTarget;
                 starPoint.classList.add('read'); // Stops glowing once opened
 
-                const rect = starpoint = starPoint.getBoundingClientRect();
+                const rect = starPoint.getBoundingClientRect();
                 const x = rect.left + rect.width / 2;
                 const y = rect.top + rect.height / 2;
                 for (let i = 0; i < 25; i++) {
