@@ -82,7 +82,7 @@
         /* Header Section */
         .header {
             position: absolute;
-            top: 30px;
+            top: 25px;
             width: 100%;
             text-align: center;
             z-index: 10;
@@ -91,7 +91,7 @@
         }
 
         .header h1 {
-            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            font-size: clamp(1.6rem, 3.5vw, 2.6rem);
             letter-spacing: 4px;
             color: #ffffff;
             text-shadow: 0 0 20px rgba(216, 180, 254, 0.8), 0 0 40px rgba(168, 85, 247, 0.5);
@@ -100,10 +100,10 @@
 
         .header p {
             font-family: 'Noto Serif Bengali', serif;
-            font-size: clamp(0.9rem, 2vw, 1.1rem);
+            font-size: clamp(0.85rem, 1.8vw, 1.05rem);
             color: #e9d5ff;
             opacity: 0.85;
-            margin-top: 6px;
+            margin-top: 5px;
             font-style: italic;
             text-shadow: 0 0 10px rgba(233, 213, 255, 0.5);
         }
@@ -244,12 +244,12 @@
             transform: translate(-50%, -50%) scale(0.85);
             width: 90%;
             max-width: 520px;
-            background: rgba(15, 8, 30, 0.85);
+            background: rgba(15, 8, 30, 0.88);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(233, 213, 255, 0.25);
             border-radius: 24px;
-            padding: 35px 30px;
+            padding: 30px 25px;
             text-align: center;
             opacity: 0;
             visibility: hidden;
@@ -265,44 +265,44 @@
         }
 
         .memory-card h2 {
-            font-size: 1.4rem;
+            font-size: 1.35rem;
             color: #f472b6;
-            margin-bottom: 16px;
+            margin-bottom: 14px;
             border-bottom: 1px dashed rgba(233, 213, 255, 0.2);
-            padding-bottom: 12px;
+            padding-bottom: 10px;
             letter-spacing: 1px;
             text-shadow: 0 0 10px rgba(244, 114, 182, 0.5);
         }
 
         .memory-card p {
             font-family: 'Noto Serif Bengali', serif;
-            font-size: 1.05rem;
-            line-height: 1.7;
+            font-size: 1rem;
+            line-height: 1.65;
             color: #f3e8ff;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         .memory-card .lyrics-quote {
             font-family: 'Cinzel', serif;
-            font-size: 0.92rem;
+            font-size: 0.9rem;
             color: #cbd5e1;
             font-style: italic;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 14px;
-            margin-top: 14px;
-            line-height: 1.5;
+            padding-top: 12px;
+            margin-top: 12px;
+            line-height: 1.4;
         }
 
         .close-btn {
-            margin-top: 20px;
+            margin-top: 15px;
             background: linear-gradient(135deg, rgba(168, 85, 247, 0.25), rgba(236, 72, 153, 0.25));
             border: 1px solid rgba(244, 114, 182, 0.5);
             color: #ffffff;
-            padding: 9px 28px;
+            padding: 8px 24px;
             border-radius: 20px;
             cursor: pointer;
             font-family: 'Cinzel', serif;
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             transition: all 0.3s ease;
             box-shadow: 0 0 15px rgba(168, 85, 247, 0.3);
         }
@@ -387,12 +387,12 @@
             background: rgba(5, 2, 12, 0.7);
             border: 1px solid rgba(233, 213, 255, 0.3);
             border-radius: 12px;
-            padding: 12px;
+            padding: 10px;
             color: #fff;
             font-family: 'Noto Serif Bengali', serif;
             font-size: 0.95rem;
             resize: none;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             outline: none;
             transition: border-color 0.3s;
         }
@@ -403,14 +403,14 @@
 
         @media (max-width: 600px) {
             .memory-card {
-                padding: 25px 20px;
+                padding: 22px 18px;
                 width: 88%;
             }
             .memory-card h2 {
-                font-size: 1.2rem;
+                font-size: 1.15rem;
             }
             .memory-card p {
-                font-size: 0.95rem;
+                font-size: 0.92rem;
             }
             .creator-footer {
                 font-size: 0.75rem;
@@ -470,171 +470,171 @@
         </div>
 
         <!-- Backdrop for Modal -->
-        <div class="modal-backdrop" id="backdrop" onclick="closeMemory()"></div>
+        <div class="modal-backdrop" id="backdrop" onclick="closeAllModals()"></div>
 
         <!-- Card 1 -->
         <div class="memory-card" id="card-1">
             <h2>The Unseen Love</h2>
             <p>তোমাকে কখনো দেখিনি, কখনো স্পর্শ করার সুযোগ হয়নি, তবুও ভেতর থেকে কতটা ভালোবেসেছি, তা হয়তো তুমি কোনোদিন বুঝবে না।</p>
             <p class="lyrics-quote">"I fell in love with a soul I never touched."</p>
-            <button class="close-btn" onclick="closeMemory()">Close</button>
+            <button class="close-btn" onclick="closeAllModals()">Close</button>
         </div>
 
         <!-- Card 2 -->
         <div class="memory-card" id="card-2">
             <h2>The Grace of Leaving</h2>
             <p class="lyrics-quote">"Meherbani jaate jaate mujhpe kar gaya... Guzarta sa lamha ek daaman bhar gaya."</p>
-            <button class="close-btn" onclick="closeMemory()">Close</button>
+            <button class="close-btn" onclick="closeAllModals()">Close</button>
         </div>
 
         <!-- Card 3 -->
         <div class="memory-card" id="card-3">
             <h2>The Echo of Pretending</h2>
             <p class="lyrics-quote">"Said I am fine, said I moved on... I am only here passing time in her arms, hoping I'd find a glimpse of us."</p>
-            <button class="close-btn" onclick="closeMemory()">Close</button>
+            <button class="close-btn" onclick="closeAllModals()">Close</button>
         </div>
 
         <!-- Card 4 -->
         <div class="memory-card" id="card-4">
             <h2>The Silent Archive</h2>
             <p> ঐ দিন গুলো কে খুব মিস করি নুহা যখন তুমি আমার সাথে অনেক কথা বলতে। আগের মতো একটু কথা বলতে খুব ইচ্ছা হয় নুহা🥺 </p>
-            <button class="close-btn" onclick="closeMemory()">Close</button>
+            <button class="close-btn" onclick="closeAllModals()">Close</button>
         </div>
 
         <!-- Card 5 -->
         <div class="memory-card" id="card-5">
             <h2>The Storm Within</h2>
             <p>তোমার সেই ছোট্ট একটা আঘাত... টানা তিনদিন না ঘুমিয়ে, না খেয়ে, প্রচণ্ড জ্বর নিয়ে শুধু কেঁদেছি Nuha.. "তুমি ছিলে দূরের নক্ষত্র, আর আমি পুড়ে যাওয়া উল্কাপিন্ড"</p>
-            <button class="close-btn" onclick="closeMemory()">Close</button>
+            <button class="close-btn" onclick="closeAllModals()">Close</button>
         </div>
 
         <!-- Card 6 -->
         <div class="memory-card" id="card-6">
             <h2>A Distant Memory</h2>
             <p>তোমার স্মৃতিগুলো আজ অনেক দূরের তারার মতো জ্বলে। কাছে আসার ক্ষমতা নেই, কিন্তু ভুলে যাওয়ারও শক্তি নেই। তুমি শুধু 'The Elusive Nuhaa' হয়েই রয়ে গেলে।🥺</p>
-            <button class="close-btn" onclick="closeMemory()">Close</button>
+            <button class="close-btn" onclick="closeAllModals()">Close</button>
         </div>
 
         <!-- Card 7 -->
         <div class="memory-card" id="card-7">
             <h2>A Heart Unheard</h2>
             <p>আমি তোমাকে যে কতটা ভালোবাসি নূহা, তা হয়তো কখনো তোমাকে বোঝাতে পারবো না।</p>
-            <button class="close-btn" onclick="closeMemory()">Close</button>
+            <button class="close-btn" onclick="closeAllModals()">Close</button>
         </div>
 
         <!-- Card 8 -->
         <div class="memory-card" id="card-8">
             <h2>The Halted Journey</h2>
             <p>You were my motivation; যখন থেকে ক্লিয়ার হলাম যে you aren't mine, from that time I stopped Nuha..</p>
-            <button class="close-btn" onclick="closeMemory()">Close</button>
+            <button class="close-btn" onclick="closeAllModals()">Close</button>
         </div>
 
         <!-- Card 9 -->
         <div class="memory-card" id="card-9">
             <h2>The Unreachable Trophy</h2>
             <p>You are my World Cup, maybe I am CR7.</p>
-            <button class="close-btn" onclick="closeMemory()">Close</button>
+            <button class="close-btn" onclick="closeAllModals()">Close</button>
         </div>
 
         <!-- Card 10 -->
         <div class="memory-card" id="card-10">
             <h2>Endless Thoughts</h2>
             <p>আমি এখনো তোমাকে ছাড়া কিছু চিন্তা করতে পারি না, নূহা।</p>
-            <button class="close-btn" onclick="closeMemory()">Close</button>
+            <button class="close-btn" onclick="closeAllModals()">Close</button>
         </div>
 
         <!-- Card 11 -->
         <div class="memory-card" id="card-11">
             <h2>Distant Dreams</h2>
             <p>এক সময় প্রতিদিন স্বপ্নে আসতে, পাশাপাশি বসে থাকতে... এখন আসলে কেন দূরে দূরে থাকো নুহা তুমি? যেন তোমাকে দেখাই আমার একমাত্র লক্ষ্য!😖</p>
-            <button class="close-btn" onclick="closeMemory()">Close</button>
+            <button class="close-btn" onclick="closeAllModals()">Close</button>
         </div>
 
         <!-- Card 12 -->
         <div class="memory-card" id="card-12">
             <h2>A Rare Love</h2>
             <p>Perhaps you deserve me, just for the reason that এই পৃথিবীতে আমার মতো মনে হয় তোমাকে কেউ ভালোবাসতে পারবে না Nuha...</p>
-            <button class="close-btn" onclick="closeMemory()">Close</button>
+            <button class="close-btn" onclick="closeAllModals()">Close</button>
         </div>
 
         <!-- Card 13 -->
         <div class="memory-card" id="card-13">
             <h2>Unmatched Feeling</h2>
             <p>আমি তোমাকে কেমন অনুভব করি, কেউ হয়তো কখনো আমার মতো অনুভব করেনি নুহা🥺</p>
-            <button class="close-btn" onclick="closeMemory()">Close</button>
+            <button class="close-btn" onclick="closeAllModals()">Close</button>
         </div>
 
         <!-- Card 14 -->
         <div class="memory-card" id="card-14">
             <h2>The Burdened Path</h2>
             <p>আমি আমার পথে আর চলতে পারছি না, Nuha...</p>
-            <button class="close-btn" onclick="closeMemory()">Close</button>
+            <button class="close-btn" onclick="closeAllModals()">Close</button>
         </div>
 
         <!-- Card 15 -->
         <div class="memory-card" id="card-15">
             <h2>Always Welcome</h2>
             <p>I just want to say that তুমি যেকোনো সময় আমার কাছে আসলে, আমি অনেক খুশি মনে তোমায় মেনে নেব Nuhaa.. (Even after your marriage)</p>
-            <button class="close-btn" onclick="closeMemory()">Close</button>
+            <button class="close-btn" onclick="closeAllModals()">Close</button>
         </div>
 
         <!-- Card 16 -->
         <div class="memory-card" id="card-16">
             <h2>Eternal Vow</h2>
             <p>I love you forever, Nuhaa...</p>
-            <button class="close-btn" onclick="closeMemory()">Close</button>
+            <button class="close-btn" onclick="closeAllModals()">Close</button>
         </div>
 
         <!-- New Card 17 -->
         <div class="memory-card" id="card-17">
             <h2>Restless Soul</h2>
             <p>আমি তোমাকে ছাড়া কোন কিছুকে শান্তি পায় না নুহা শুধু কথা বলা অফ দেখে😖🥹</p>
-            <button class="close-btn" onclick="closeMemory()">Close</button>
+            <button class="close-btn" onclick="closeAllModals()">Close</button>
         </div>
 
         <!-- New Card 18 -->
         <div class="memory-card" id="card-18">
             <h2>Inner Collapse</h2>
             <p>হয়তো physically তোমাকে ছাড়া বাঁচা সম্ভব কিন্তু নুহা ভিতর থেকে একদম মরে গেছি নুহা🥹</p>
-            <button class="close-btn" onclick="closeMemory()">Close</button>
+            <button class="close-btn" onclick="closeAllModals()">Close</button>
         </div>
 
         <!-- New Card 19 -->
         <div class="memory-card" id="card-19">
             <h2>All My Thoughts</h2>
             <p>নুহা তুমি আমার চিন্তার সবটুকু তোমাকে ছাড়া কিছুই ভাবতে পারি না নুহা😖🥹</p>
-            <button class="close-btn" onclick="closeMemory()">Close</button>
+            <button class="close-btn" onclick="closeAllModals()">Close</button>
         </div>
 
         <!-- New Card 20 -->
         <div class="memory-card" id="card-20">
             <h2>Unasked Plea</h2>
             <p>নুহা ভালোবাসা যদি চাইলেই পাওয়া যেত আমি তোমার কাছে একটু ভিক্ষায় একটু ভালোবাসা চেয়ে নিতাম নুহা😖</p>
-            <button class="close-btn" onclick="closeMemory()">Close</button>
+            <button class="close-btn" onclick="closeAllModals()">Close</button>
         </div>
 
         <!-- New Card 21 -->
         <div class="memory-card" id="card-21">
             <h2>Absolute Devotion</h2>
             <p>আমি তোমাকে আমার মস্তিষ্কের 100% ভালোবাসি নুহা। যেহেতু 1% ও you are not interested about my feelings তাই চাই আমার জন্য তোমার কোনো সুন্দর দিন নষ্ট না হোক😓</p>
-            <button class="close-btn" onclick="closeMemory()">Close</button>
+            <button class="close-btn" onclick="closeAllModals()">Close</button>
         </div>
 
         <!-- New Card 22 -->
         <div class="memory-card" id="card-22">
             <h2>Persistent Mind</h2>
             <p>তোমার কথা মাথায় আসলে আর নামতে চায় না নুহা.....😖😖</p>
-            <button class="close-btn" onclick="closeMemory()">Close</button>
+            <button class="close-btn" onclick="closeAllModals()">Close</button>
         </div>
 
         <!-- Message Modal to send to sofiulazamsunny@gmail.com -->
         <div class="memory-card" id="message-modal">
             <h2>Send Message to Sunny</h2>
-            <p style="font-size: 0.9rem; margin-bottom: 15px; color: #cbd5e1;">Your note will be sent directly to sofiulazamsunny@gmail.com</p>
-            <textarea id="visitor-message" class="message-input" placeholder="Type your message here..." rows="4"></textarea>
-            <div style="display: flex; gap: 12px; justify-content: center;">
+            <p style="font-size: 0.88rem; margin-bottom: 12px; color: #cbd5e1;">Your note will be sent directly to sofiulazamsunny@gmail.com</p>
+            <textarea id="visitor-message" class="message-input" placeholder="Type your message here..." rows="3"></textarea>
+            <div style="display: flex; gap: 10px; justify-content: center;">
                 <button class="close-btn" style="margin-top:0;" onclick="sendEmailMessage()">Send Email</button>
-                <button class="close-btn" style="margin-top:0; background: rgba(255,255,255,0.1);" onclick="closeMessageModal()">Cancel</button>
+                <button class="close-btn" style="margin-top:0; background: rgba(255,255,255,0.1);" onclick="closeAllModals()">Cancel</button>
             </div>
         </div>
 
@@ -845,14 +845,20 @@
             constCtx.restore();
         }
 
+        function closeAllModals() {
+            document.querySelectorAll('.memory-card').forEach(card => card.classList.remove('active'));
+            const backdrop = document.getElementById('backdrop');
+            if (backdrop) backdrop.classList.remove('active');
+        }
+
         function openMemory(cardId, event) {
-            closeMemory();
+            closeAllModals();
 
             if (event) {
                 const starPoint = event.currentTarget;
-                starPoint.classList.add('read'); // Marks star as read so it stops glowing brightly
+                starPoint.classList.add('read'); // Stops glowing once opened
 
-                const rect = starPoint.getBoundingClientRect();
+                const rect = starpoint = starPoint.getBoundingClientRect();
                 const x = rect.left + rect.width / 2;
                 const y = rect.top + rect.height / 2;
                 for (let i = 0; i < 25; i++) {
@@ -869,27 +875,14 @@
             }
         }
 
-        function closeMemory() {
-            document.querySelectorAll('.memory-card').forEach(card => card.classList.remove('active'));
-            const backdrop = document.getElementById('backdrop');
-            if (backdrop) backdrop.classList.remove('active');
-        }
-
         function openMessageModal() {
-            closeMemory();
+            closeAllModals();
             const modal = document.getElementById('message-modal');
             const backdrop = document.getElementById('backdrop');
             if (modal && backdrop) {
                 modal.classList.add('active');
                 backdrop.classList.add('active');
             }
-        }
-
-        function closeMessageModal() {
-            const modal = document.getElementById('message-modal');
-            const backdrop = document.getElementById('backdrop');
-            if (modal) modal.classList.remove('active');
-            if (backdrop) backdrop.classList.remove('active');
         }
 
         function sendEmailMessage() {
@@ -902,14 +895,11 @@
             const subject = encodeURIComponent('Message from The Elusive Nuhaa Visitor');
             const body = encodeURIComponent(msg);
             window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
-            closeMessageModal();
+            closeAllModals();
         }
 
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') {
-                closeMemory();
-                closeMessageModal();
-            }
+            if (e.key === 'Escape') closeAllModals();
         });
 
         window.onload = function() {
