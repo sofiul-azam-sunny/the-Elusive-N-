@@ -1,4 +1,3 @@
-Nᴜʜᴀᴀᴀ
 <!DOCTYPE html>
 <html lang="bn">
 <head>
@@ -83,7 +82,7 @@ Nᴜʜᴀᴀᴀ
         /* Header Section */
         .header {
             position: absolute;
-            top: 35px;
+            top: 30px;
             width: 100%;
             text-align: center;
             z-index: 10;
@@ -92,7 +91,7 @@ Nᴜʜᴀᴀᴀ
         }
 
         .header h1 {
-            font-size: clamp(1.8rem, 4vw, 3rem);
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
             letter-spacing: 4px;
             color: #ffffff;
             text-shadow: 0 0 20px rgba(216, 180, 254, 0.8), 0 0 40px rgba(168, 85, 247, 0.5);
@@ -101,10 +100,10 @@ Nᴜʜᴀᴀᴀ
 
         .header p {
             font-family: 'Noto Serif Bengali', serif;
-            font-size: clamp(0.9rem, 2vw, 1.15rem);
+            font-size: clamp(0.9rem, 2vw, 1.1rem);
             color: #e9d5ff;
             opacity: 0.85;
-            margin-top: 8px;
+            margin-top: 6px;
             font-style: italic;
             text-shadow: 0 0 10px rgba(233, 213, 255, 0.5);
         }
@@ -152,12 +151,14 @@ Nᴜʜᴀᴀᴀ
             background: #ffffff;
             border-radius: 50%;
             box-shadow: 0 0 15px #ffffff, 0 0 30px #e879f9, 0 0 45px #a855f7;
+            transition: all 0.4s ease;
         }
 
         .star-ray-v, .star-ray-h {
             position: absolute;
             background: linear-gradient(to bottom, transparent, #ffffff, transparent);
             border-radius: 50%;
+            transition: all 0.4s ease;
         }
 
         .star-ray-v {
@@ -179,6 +180,7 @@ Nᴜʜᴀᴀᴀ
             border-radius: 50%;
             background: radial-gradient(circle, rgba(232, 121, 249, 0.4) 0%, transparent 70%);
             animation: haloPulse 2.5s infinite alternate ease-in-out;
+            transition: all 0.4s ease;
         }
 
         @keyframes haloPulse {
@@ -194,7 +196,24 @@ Nᴜʜᴀᴀᴀ
             box-shadow: 0 0 20px #ffffff, 0 0 40px #f472b6, 0 0 60px #c084fc;
         }
 
-        /* Star Coordinates for 16 Constellation Nodes */
+        /* Read Star State (Once opened, stops glowing/highlighting) */
+        .star-point.read .star-halo {
+            animation: none;
+            opacity: 0.15;
+            background: radial-gradient(circle, rgba(150, 150, 150, 0.2) 0%, transparent 70%);
+        }
+
+        .star-point.read .star-core {
+            box-shadow: 0 0 4px rgba(255, 255, 255, 0.3);
+            background: #94a3b8;
+        }
+
+        .star-point.read .star-ray-v, 
+        .star-point.read .star-ray-h {
+            opacity: 0.2;
+        }
+
+        /* Star Coordinates for 22 Constellation Nodes */
         .star-1  { top: 30%; left: 15%; }
         .star-2  { top: 55%; left: 12%; }
         .star-3  { top: 40%; left: 45%; }
@@ -211,6 +230,12 @@ Nᴜʜᴀᴀᴀ
         .star-14 { top: 48%; left: 92%; }
         .star-15 { top: 48%; left: 28%; }
         .star-16 { top: 50%; left: 72%; }
+        .star-17 { top: 18%; left: 52%; }
+        .star-18 { top: 72%; left: 50%; }
+        .star-19 { top: 42%; left: 18%; }
+        .star-20 { top: 58%; left: 78%; }
+        .star-21 { top: 32%; left: 82%; }
+        .star-22 { top: 78%; left: 42%; }
 
         .memory-card {
             position: absolute;
@@ -219,7 +244,7 @@ Nᴜʜᴀᴀᴀ
             transform: translate(-50%, -50%) scale(0.85);
             width: 90%;
             max-width: 520px;
-            background: rgba(15, 8, 30, 0.75);
+            background: rgba(15, 8, 30, 0.85);
             backdrop-filter: blur(20px);
             -webkit-backdrop-filter: blur(20px);
             border: 1px solid rgba(233, 213, 255, 0.25);
@@ -309,6 +334,73 @@ Nᴜʜᴀᴀᴀ
             visibility: visible;
         }
 
+        /* Creator Footer Section */
+        .creator-footer {
+            position: absolute;
+            bottom: 15px;
+            width: 100%;
+            text-align: center;
+            z-index: 15;
+            font-size: 0.85rem;
+            color: #cbd5e1;
+            pointer-events: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .creator-footer a {
+            color: #f472b6;
+            text-decoration: none;
+            font-weight: 700;
+            letter-spacing: 1px;
+            border-bottom: 1px dotted #f472b6;
+            transition: color 0.3s;
+        }
+
+        .creator-footer a:hover {
+            color: #ffffff;
+        }
+
+        .msg-toggle-btn {
+            background: rgba(168, 85, 247, 0.2);
+            border: 1px solid rgba(244, 114, 182, 0.4);
+            color: #f3e8ff;
+            padding: 5px 14px;
+            border-radius: 15px;
+            cursor: pointer;
+            font-family: 'Cinzel', serif;
+            font-size: 0.78rem;
+            transition: all 0.3s;
+        }
+
+        .msg-toggle-btn:hover {
+            background: rgba(168, 85, 247, 0.4);
+            border-color: #fff;
+            transform: translateY(-1px);
+        }
+
+        /* Message Box styling inside card */
+        .message-input {
+            width: 100%;
+            background: rgba(5, 2, 12, 0.7);
+            border: 1px solid rgba(233, 213, 255, 0.3);
+            border-radius: 12px;
+            padding: 12px;
+            color: #fff;
+            font-family: 'Noto Serif Bengali', serif;
+            font-size: 0.95rem;
+            resize: none;
+            margin-bottom: 15px;
+            outline: none;
+            transition: border-color 0.3s;
+        }
+
+        .message-input:focus {
+            border-color: #f472b6;
+        }
+
         @media (max-width: 600px) {
             .memory-card {
                 padding: 25px 20px;
@@ -319,6 +411,9 @@ Nᴜʜᴀᴀᴀ
             }
             .memory-card p {
                 font-size: 0.95rem;
+            }
+            .creator-footer {
+                font-size: 0.75rem;
             }
         }
     </style>
@@ -341,87 +436,37 @@ Nᴜʜᴀᴀᴀ
             <p>"একটি অদেখা মায়া, একটি না পাওয়া গল্প..."</p>
         </div>
 
-        <!-- 16 Interactive Star Constellation Points -->
+        <!-- Creator Footer & Message Trigger -->
+        <div class="creator-footer">
+            <span>Created with devotion by <a href="https://www.instagram.com/sofiulazamsunny?exln=MWppMTBrNnJ1bTBtbw==" target="_blank">SOFIUL AZAM SUNNY</a></span>
+            <button class="msg-toggle-btn" onclick="openMessageModal()">💌 Leave a Message for Sunny</button>
+        </div>
+
+        <!-- 22 Interactive Star Constellation Points -->
         <div class="stars-container">
-            <div class="star-point star-1" onclick="openMemory('card-1', event)">
-                <div class="star-halo"></div>
-                <div class="star-flare"><div class="star-ray-v"></div><div class="star-ray-h"></div><div class="star-core"></div></div>
-            </div>
-
-            <div class="star-point star-2" onclick="openMemory('card-2', event)">
-                <div class="star-halo"></div>
-                <div class="star-flare"><div class="star-ray-v"></div><div class="star-ray-h"></div><div class="star-core"></div></div>
-            </div>
-
-            <div class="star-point star-3" onclick="openMemory('card-3', event)">
-                <div class="star-halo"></div>
-                <div class="star-flare"><div class="star-ray-v"></div><div class="star-ray-h"></div><div class="star-core"></div></div>
-            </div>
-
-            <div class="star-point star-4" onclick="openMemory('card-4', event)">
-                <div class="star-halo"></div>
-                <div class="star-flare"><div class="star-ray-v"></div><div class="star-ray-h"></div><div class="star-core"></div></div>
-            </div>
-
-            <div class="star-point star-5" onclick="openMemory('card-5', event)">
-                <div class="star-halo"></div>
-                <div class="star-flare"><div class="star-ray-v"></div><div class="star-ray-h"></div><div class="star-core"></div></div>
-            </div>
-
-            <div class="star-point star-6" onclick="openMemory('card-6', event)">
-                <div class="star-halo"></div>
-                <div class="star-flare"><div class="star-ray-v"></div><div class="star-ray-h"></div><div class="star-core"></div></div>
-            </div>
-
-            <div class="star-point star-7" onclick="openMemory('card-7', event)">
-                <div class="star-halo"></div>
-                <div class="star-flare"><div class="star-ray-v"></div><div class="star-ray-h"></div><div class="star-core"></div></div>
-            </div>
-
-            <div class="star-point star-8" onclick="openMemory('card-8', event)">
-                <div class="star-halo"></div>
-                <div class="star-flare"><div class="star-ray-v"></div><div class="star-ray-h"></div><div class="star-core"></div></div>
-            </div>
-
-            <div class="star-point star-9" onclick="openMemory('card-9', event)">
-                <div class="star-halo"></div>
-                <div class="star-flare"><div class="star-ray-v"></div><div class="star-ray-h"></div><div class="star-core"></div></div>
-            </div>
-
-            <div class="star-point star-10" onclick="openMemory('card-10', event)">
-                <div class="star-halo"></div>
-                <div class="star-flare"><div class="star-ray-v"></div><div class="star-ray-h"></div><div class="star-core"></div></div>
-            </div>
-
-            <div class="star-point star-11" onclick="openMemory('card-11', event)">
-                <div class="star-halo"></div>
-                <div class="star-flare"><div class="star-ray-v"></div><div class="star-ray-h"></div><div class="star-core"></div></div>
-            </div>
-
-            <div class="star-point star-12" onclick="openMemory('card-12', event)">
-                <div class="star-halo"></div>
-                <div class="star-flare"><div class="star-ray-v"></div><div class="star-ray-h"></div><div class="star-core"></div></div>
-            </div>
-
-            <div class="star-point star-13" onclick="openMemory('card-13', event)">
-                <div class="star-halo"></div>
-                <div class="star-flare"><div class="star-ray-v"></div><div class="star-ray-h"></div><div class="star-core"></div></div>
-            </div>
-
-            <div class="star-point star-14" onclick="openMemory('card-14', event)">
-                <div class="star-halo"></div>
-                <div class="star-flare"><div class="star-ray-v"></div><div class="star-ray-h"></div><div class="star-core"></div></div>
-            </div>
-
-            <div class="star-point star-15" onclick="openMemory('card-15', event)">
-                <div class="star-halo"></div>
-                <div class="star-flare"><div class="star-ray-v"></div><div class="star-ray-h"></div><div class="star-core"></div></div>
-            </div>
-
-            <div class="star-point star-16" onclick="openMemory('card-16', event)">
-                <div class="star-halo"></div>
-                <div class="star-flare"><div class="star-ray-v"></div><div class="star-ray-h"></div><div class="star-core"></div></div>
-            </div>
+            <div class="star-point star-1" onclick="openMemory('card-1', event)"><div class="star-halo"></div><div class="star-flare"><div class="star-ray-v"></div><div class="star-ray-h"></div><div class="star-core"></div></div></div>
+            <div class="star-point star-2" onclick="openMemory('card-2', event)"><div class="star-halo"></div><div class="star-flare"><div class="star-ray-v"></div><div class="star-ray-h"></div><div class="star-core"></div></div></div>
+            <div class="star-point star-3" onclick="openMemory('card-3', event)"><div class="star-halo"></div><div class="star-flare"><div class="star-ray-v"></div><div class="star-ray-h"></div><div class="star-core"></div></div></div>
+            <div class="star-point star-4" onclick="openMemory('card-4', event)"><div class="star-halo"></div><div class="star-flare"><div class="star-ray-v"></div><div class="star-ray-h"></div><div class="star-core"></div></div></div>
+            <div class="star-point star-5" onclick="openMemory('card-5', event)"><div class="star-halo"></div><div class="star-flare"><div class="star-ray-v"></div><div class="star-ray-h"></div><div class="star-core"></div></div></div>
+            <div class="star-point star-6" onclick="openMemory('card-6', event)"><div class="star-halo"></div><div class="star-flare"><div class="star-ray-v"></div><div class="star-ray-h"></div><div class="star-core"></div></div></div>
+            <div class="star-point star-7" onclick="openMemory('card-7', event)"><div class="star-halo"></div><div class="star-flare"><div class="star-ray-v"></div><div class="star-ray-h"></div><div class="star-core"></div></div></div>
+            <div class="star-point star-8" onclick="openMemory('card-8', event)"><div class="star-halo"></div><div class="star-flare"><div class="star-ray-v"></div><div class="star-ray-h"></div><div class="star-core"></div></div></div>
+            <div class="star-point star-9" onclick="openMemory('card-9', event)"><div class="star-halo"></div><div class="star-flare"><div class="star-ray-v"></div><div class="star-ray-h"></div><div class="star-core"></div></div></div>
+            <div class="star-point star-10" onclick="openMemory('card-10', event)"><div class="star-halo"></div><div class="star-flare"><div class="star-ray-v"></div><div class="star-ray-h"></div><div class="star-core"></div></div></div>
+            <div class="star-point star-11" onclick="openMemory('card-11', event)"><div class="star-halo"></div><div class="star-flare"><div class="star-ray-v"></div><div class="star-ray-h"></div><div class="star-core"></div></div></div>
+            <div class="star-point star-12" onclick="openMemory('card-12', event)"><div class="star-halo"></div><div class="star-flare"><div class="star-ray-v"></div><div class="star-ray-h"></div><div class="star-core"></div></div></div>
+            <div class="star-point star-13" onclick="openMemory('card-13', event)"><div class="star-halo"></div><div class="star-flare"><div class="star-ray-v"></div><div class="star-ray-h"></div><div class="star-core"></div></div></div>
+            <div class="star-point star-14" onclick="openMemory('card-14', event)"><div class="star-halo"></div><div class="star-flare"><div class="star-ray-v"></div><div class="star-ray-h"></div><div class="star-core"></div></div></div>
+            <div class="star-point star-15" onclick="openMemory('card-15', event)"><div class="star-halo"></div><div class="star-flare"><div class="star-ray-v"></div><div class="star-ray-h"></div><div class="star-core"></div></div></div>
+            <div class="star-point star-16" onclick="openMemory('card-16', event)"><div class="star-halo"></div><div class="star-flare"><div class="star-ray-v"></div><div class="star-ray-h"></div><div class="star-core"></div></div></div>
+            <!-- New Stars for New Lines -->
+            <div class="star-point star-17" onclick="openMemory('card-17', event)"><div class="star-halo"></div><div class="star-flare"><div class="star-ray-v"></div><div class="star-ray-h"></div><div class="star-core"></div></div></div>
+            <div class="star-point star-18" onclick="openMemory('card-18', event)"><div class="star-halo"></div><div class="star-flare"><div class="star-ray-v"></div><div class="star-ray-h"></div><div class="star-core"></div></div></div>
+            <div class="star-point star-19" onclick="openMemory('card-19', event)"><div class="star-halo"></div><div class="star-flare"><div class="star-ray-v"></div><div class="star-ray-h"></div><div class="star-core"></div></div></div>
+            <div class="star-point star-20" onclick="openMemory('card-20', event)"><div class="star-halo"></div><div class="star-flare"><div class="star-ray-v"></div><div class="star-ray-h"></div><div class="star-core"></div></div></div>
+            <div class="star-point star-21" onclick="openMemory('card-21', event)"><div class="star-halo"></div><div class="star-flare"><div class="star-ray-v"></div><div class="star-ray-h"></div><div class="star-core"></div></div></div>
+            <div class="star-point star-22" onclick="openMemory('card-22', event)"><div class="star-halo"></div><div class="star-flare"><div class="star-ray-v"></div><div class="star-ray-h"></div><div class="star-core"></div></div></div>
         </div>
 
         <!-- Backdrop for Modal -->
@@ -430,7 +475,7 @@ Nᴜʜᴀᴀᴀ
         <!-- Card 1 -->
         <div class="memory-card" id="card-1">
             <h2>The Unseen Love</h2>
-            <p>তোমাকে কখনো দেখিনি, কখনো স্পর্শ করার সুযোগ হয়নি, তবুও ভেতর থেকে কতটা ভালোবেসেছি, তা হয়তো তুমি কোনোদিন বুঝবে না।</p>
+            <p>তোমাকে কখনো দেখিনি, কখনো স্পর্শ করার সুযোগ হয়নি, তবুও ভেতর থেকে কতটা ভালোবেসেছি, তা হয়তো তুমি কোনোদিন বুঝবে না নুহা তুমি🥹 </p>
             <p class="lyrics-quote">"I fell in love with a soul I never touched."</p>
             <button class="close-btn" onclick="closeMemory()">Close</button>
         </div>
@@ -452,21 +497,21 @@ Nᴜʜᴀᴀᴀ
         <!-- Card 4 -->
         <div class="memory-card" id="card-4">
             <h2>The Silent Archive</h2>
-            <p>তোমার জন্য কত Reels আর Shorts সেভ করে রেখেছি! কত গানের লাইন, কত জমানো কথা... ভাবতাম দেখা হলে সব বলবো। কিন্তু সব বুকে চেপে রেখেছি, শুধু ব্লক হয়ে যাওয়ার ভয়ে!</p>
+            <p> ঐ দিন গুলো কে খুব মিস করি নুহা যখন তুমি আমার সাথে অনেক কথা বলতে। আগের মতো একটু কথা বলতে খুব ইচ্ছা হয় নুহা🥺 </p>
             <button class="close-btn" onclick="closeMemory()">Close</button>
         </div>
 
         <!-- Card 5 -->
         <div class="memory-card" id="card-5">
             <h2>The Storm Within</h2>
-            <p>তোমার সেই ছোট্ট একটা আঘাত... টানা তিনদিন না ঘুমিয়ে, না খেয়ে, প্রচণ্ড জ্বর নিয়ে শুধু কেঁদেছি। তুমি ছিলে দূরের নক্ষত্র, আর আমি পুড়ে যাওয়া উল্কাপিন্ড।</p>
+            <p>তোমার সেই ছোট্ট একটা আঘাত... টানা তিনদিন না ঘুমিয়ে, না খেয়ে, প্রচণ্ড জ্বর নিয়ে শুধু কেঁদেছি Nuha.. "তুমি ছিলে দূরের নক্ষত্র, আর আমি পুড়ে যাওয়া উল্কাপিন্ড"</p>
             <button class="close-btn" onclick="closeMemory()">Close</button>
         </div>
 
         <!-- Card 6 -->
         <div class="memory-card" id="card-6">
             <h2>A Distant Memory</h2>
-            <p>তোমার স্মৃতিগুলো আজ অনেক দূরের তারার মতো জ্বলে। কাছে আসার ক্ষমতা নেই, কিন্তু ভুলে যাওয়ারও শক্তি নেই। তুমি শুধু 'The Elusive Nuhaa' হয়েই রয়ে গেলে।</p>
+            <p>তোমার স্মৃতিগুলো আজ অনেক দূরের তারার মতো জ্বলে। কাছে আসার ক্ষমতা নেই, কিন্তু ভুলে যাওয়ারও শক্তি নেই। তুমি শুধু 'The Elusive Nuhaa' হয়েই রয়ে গেলে।🥺</p>
             <button class="close-btn" onclick="closeMemory()">Close</button>
         </div>
 
@@ -480,7 +525,7 @@ Nᴜʜᴀᴀᴀ
         <!-- Card 8 -->
         <div class="memory-card" id="card-8">
             <h2>The Halted Journey</h2>
-            <p>You were my motivation; যখন থেকে ক্লিয়ার হলাম যে you aren't mine, from that time I stopped.</p>
+            <p>You were my motivation; যখন থেকে ক্লিয়ার হলাম যে you aren't mine, from that time I stopped Nuha..</p>
             <button class="close-btn" onclick="closeMemory()">Close</button>
         </div>
 
@@ -501,35 +546,35 @@ Nᴜʜᴀᴀᴀ
         <!-- Card 11 -->
         <div class="memory-card" id="card-11">
             <h2>Distant Dreams</h2>
-            <p>এক সময় প্রতিদিন স্বপ্নে আসতে, পাশাপাশি বসে থাকতে... এখন আসলে কেন দূরে দূরে থাকো? যেন তোমাকে দেখাই আমার একমাত্র লক্ষ্য।</p>
+            <p>এক সময় প্রতিদিন স্বপ্নে আসতে, পাশাপাশি বসে থাকতে... এখন আসলে কেন দূরে দূরে থাকো নুহা তুমি? যেন তোমাকে দেখাই আমার একমাত্র লক্ষ্য!😖</p>
             <button class="close-btn" onclick="closeMemory()">Close</button>
         </div>
 
         <!-- Card 12 -->
         <div class="memory-card" id="card-12">
             <h2>A Rare Love</h2>
-            <p>Perhaps you deserve me, just for the reason that এই পৃথিবীতে আমার মতো মনে হয় তোমাকে কেউ ভালোবাসতে পারবে না।</p>
+            <p>Perhaps you deserve me, just for the reason that এই পৃথিবীতে আমার মতো মনে হয় তোমাকে কেউ ভালোবাসতে পারবে না Nuha...</p>
             <button class="close-btn" onclick="closeMemory()">Close</button>
         </div>
 
         <!-- Card 13 -->
         <div class="memory-card" id="card-13">
             <h2>Unmatched Feeling</h2>
-            <p>আমি তোমাকে কেমন অনুভব করি, কেউ হয়তো কখনো আমার মতো অনুভব করেনি।</p>
+            <p>আমি তোমাকে কেমন অনুভব করি, কেউ হয়তো কখনো আমার মতো অনুভব করেনি নুহা🥺</p>
             <button class="close-btn" onclick="closeMemory()">Close</button>
         </div>
 
         <!-- Card 14 -->
         <div class="memory-card" id="card-14">
             <h2>The Burdened Path</h2>
-            <p>আমি আমার পথে আর চলতে পারছি না, নূহা...</p>
+            <p>আমি আমার পথে আর চলতে পারছি না, Nuha...</p>
             <button class="close-btn" onclick="closeMemory()">Close</button>
         </div>
 
         <!-- Card 15 -->
         <div class="memory-card" id="card-15">
             <h2>Always Welcome</h2>
-            <p>I just want to say that তুমি যেকোনো সময় আমার কাছে আসলে, আমি অনেক খুশি মনে তোমায় মেনে নেব। (Even after your marriage)</p>
+            <p>I just want to say that তুমি যেকোনো সময় আমার কাছে আসলে, আমি অনেক খুশি মনে তোমায় মেনে নেব Nuhaa.. (Even after your marriage)</p>
             <button class="close-btn" onclick="closeMemory()">Close</button>
         </div>
 
@@ -538,6 +583,59 @@ Nᴜʜᴀᴀᴀ
             <h2>Eternal Vow</h2>
             <p>I love you forever, Nuhaa...</p>
             <button class="close-btn" onclick="closeMemory()">Close</button>
+        </div>
+
+        <!-- New Card 17 -->
+        <div class="memory-card" id="card-17">
+            <h2>Restless Soul</h2>
+            <p>আমি তোমাকে ছাড়া কোন কিছুকে শান্তি পায় না নুহা শুধু কথা বলা অফ দেখে😖🥹</p>
+            <button class="close-btn" onclick="closeMemory()">Close</button>
+        </div>
+
+        <!-- New Card 18 -->
+        <div class="memory-card" id="card-18">
+            <h2>Inner Collapse</h2>
+            <p>হয়তো physically তোমাকে ছাড়া বাঁচা সম্ভব কিন্তু নুহা ভিতর থেকে একদম মরে গেছি নুহা🥹</p>
+            <button class="close-btn" onclick="closeMemory()">Close</button>
+        </div>
+
+        <!-- New Card 19 -->
+        <div class="memory-card" id="card-19">
+            <h2>All My Thoughts</h2>
+            <p>নুহা তুমি আমার চিন্তার সবটুকু! তোমাকে ছাড়া কিছুই ভাবতে পারি না নুহা😖😖</p>
+            <button class="close-btn" onclick="closeMemory()">Close</button>
+        </div>
+
+        <!-- New Card 20 -->
+        <div class="memory-card" id="card-20">
+            <h2>Unasked Plea</h2>
+            <p>নুহা ভালোবাসা যদি চাইলেই পাওয়া যেত আমি তোমার কাছে একটু ভিক্ষায় একটু ভালোবাসা চেয়ে নিতাম নুহা...😖</p>
+            <button class="close-btn" onclick="closeMemory()">Close</button>
+        </div>
+
+        <!-- New Card 21 -->
+        <div class="memory-card" id="card-21">
+            <h2>Absolute Devotion</h2>
+            <p>আমি তোমাকে আমার মস্তিষ্কের 100% ভালোবাসি নুহা। যেহেতু 1% ও you are not interested about my feelings তাই চাই আমার জন্য তোমার কোনো সুন্দর দিন নষ্ট না হোক😓</p>
+            <button class="close-btn" onclick="closeMemory()">Close</button>
+        </div>
+
+        <!-- New Card 22 -->
+        <div class="memory-card" id="card-22">
+            <h2>Persistent Mind</h2>
+            <p>তোমার কথা মাথায় আসলে আর নামতে চায় না নুহা.....😖😖</p>
+            <button class="close-btn" onclick="closeMemory()">Close</button>
+        </div>
+
+        <!-- Message Modal to send to sofiulazamsunny@gmail.com -->
+        <div class="memory-card" id="message-modal">
+            <h2>Send Message to Sunny</h2>
+            <p style="font-size: 0.9rem; margin-bottom: 15px; color: #cbd5e1;">Your note will be sent directly to sofiulazamsunny@gmail.com</p>
+            <textarea id="visitor-message" class="message-input" placeholder="Type your message here..." rows="4"></textarea>
+            <div style="display: flex; gap: 12px; justify-content: center;">
+                <button class="close-btn" style="margin-top:0;" onclick="sendEmailMessage()">Send Email</button>
+                <button class="close-btn" style="margin-top:0; background: rgba(255,255,255,0.1);" onclick="closeMessageModal()">Cancel</button>
+            </div>
         </div>
 
     </div>
@@ -731,7 +829,8 @@ Nᴜʜᴀᴀᴀ
             const connections = [
                 [0, 7], [7, 6], [6, 12], [12, 4], [4, 13], 
                 [13, 5], [5, 15], [15, 2], [2, 11], [11, 3], 
-                [3, 9], [9, 8], [8, 1], [1, 14], [14, 0]
+                [3, 9], [9, 8], [8, 1], [1, 14], [14, 0],
+                [16, 0], [17, 4], [18, 1], [19, 5], [20, 12], [21, 9]
             ];
 
             connections.forEach(([i, j]) => {
@@ -750,7 +849,10 @@ Nᴜʜᴀᴀᴀ
             closeMemory();
 
             if (event) {
-                const rect = event.currentTarget.getBoundingClientRect();
+                const starPoint = event.currentTarget;
+                starPoint.classList.add('read'); // Marks star as read so it stops glowing brightly
+
+                const rect = starPoint.getBoundingClientRect();
                 const x = rect.left + rect.width / 2;
                 const y = rect.top + rect.height / 2;
                 for (let i = 0; i < 25; i++) {
@@ -773,8 +875,41 @@ Nᴜʜᴀᴀᴀ
             if (backdrop) backdrop.classList.remove('active');
         }
 
+        function openMessageModal() {
+            closeMemory();
+            const modal = document.getElementById('message-modal');
+            const backdrop = document.getElementById('backdrop');
+            if (modal && backdrop) {
+                modal.classList.add('active');
+                backdrop.classList.add('active');
+            }
+        }
+
+        function closeMessageModal() {
+            const modal = document.getElementById('message-modal');
+            const backdrop = document.getElementById('backdrop');
+            if (modal) modal.classList.remove('active');
+            if (backdrop) backdrop.classList.remove('active');
+        }
+
+        function sendEmailMessage() {
+            const msg = document.getElementById('visitor-message').value;
+            if(!msg.trim()) {
+                alert('দয়া করে কিছু লিখে দিন।');
+                return;
+            }
+            const email = 'sofiulazamsunny@gmail.com';
+            const subject = encodeURIComponent('Message from The Elusive Nuhaa Visitor');
+            const body = encodeURIComponent(msg);
+            window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+            closeMessageModal();
+        }
+
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeMemory();
+            if (e.key === 'Escape') {
+                closeMemory();
+                closeMessageModal();
+            }
         });
 
         window.onload = function() {
@@ -785,4 +920,3 @@ Nᴜʜᴀᴀᴀ
     </script>
 </body>
 </html>
-....
